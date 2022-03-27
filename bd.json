@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "employ": "Mohammad",
+      "age": 22,
+      "department": "marketing",
+      "salary": 30000,
+      "address": "basavatraraka Nagar",
+      "ismarried": true,
+      "id": 1
+    },
+    {
+      "employ": "Rishab",
+      "age": 23,
+      "department": "finance",
+      "salary": 40000,
+      "address": "Noida, New Delhi, UP",
+      "ismarried": true,
+      "id": 2
+    }
+  ]
+}
