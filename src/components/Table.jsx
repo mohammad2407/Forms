@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Forms"
-const Table = () => {
+const Table = ({handleData}) => {
 
     const [employdata, setemployData] = React.useState([])
 
@@ -10,7 +10,7 @@ const Table = () => {
 
       
     const getData = () =>{
-        fetch("http://localhost:3001/employees")
+        fetch("https://github.com/masai-school/api-mocker/wiki/Authentication-API")
         .then((res) => (res = res.json()))
         .then((res) => setemployData(res))
     }
@@ -36,7 +36,7 @@ const Table = () => {
                     <td >{item.address}</td>
                     <td >{item.department}</td>
                     <td >{item.salary}</td>
-                    <td >{item.ismarried == true ? "Married" : "Not Married"}</td>
+                    <td >{item.ismarried === true ? "Married" : "Not Married"}</td>
                    </tr>
                ))
            }

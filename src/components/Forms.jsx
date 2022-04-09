@@ -1,15 +1,15 @@
 import React from 'react'
 import './Form.css'
-import Table from './Table'
+// import Table from './Table'
 export const Forms = () => {
 
     const [formData, setFormData] = React.useState({
-        employ : "",
-        age : "",
-        department : "",
-        salary: "",
-        address : "",
-        ismarried : false
+        name : "",
+        email : "",
+        password : "",
+        username: "",
+        mobile : "",
+        description : ""
     })
     
 
@@ -21,70 +21,75 @@ export const Forms = () => {
         })
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e,getData) =>{
         e.preventDefault()
-        fetch('http://localhost:3001/employees',{
+        fetch('https://masai-api-mocker.herokuapp.com/auth/register',{
             method : "POST",
             body: JSON.stringify(formData),
             headers : {
                 "Content-Type" : "application/json"
             }
-        })
+        }).then((res) => (console.log(res.json())))
     }
 
     // console.log(formData)
-    const{employ,age,department,salary,address} = formData
+    const{name,email,password,username,mobile,description} = formData
 
   return (
+      <>
+      
     <form  value = {formData} onSubmit = {handleSubmit}>
 
-    
+    <h1>Registration Page</h1>    
     <label>Employ Name: </label>
     <input 
         type="text" 
-        id='employ'
+        id='name'
         placeholder='Enter Name'
         onChange={handleChange}
-        value = {employ}
+        value = {name}
         />
 
     <br />
-        <label>Age:</label>       
-        <input type="number" placeholder='Age' id='age'  onChange={handleChange} value = {age}/>
+        <label>email</label>       
+        <input type="email" placeholder='Age' id='email'  onChange={handleChange} value = {email}/>
     
     <br />
 
     <label>Employ Address:</label>
         <input 
         type="text" 
-        id='address'
+        id='password'
         placeholder='Enter Address'
         onChange={handleChange}
-        value = {address}
+        value = {password}
         />
 
     <br />
 
-    <label >Department:</label>
-    <select name="" id="department" onChange={handleChange} value = {department} >
-        <option value="">Select Department</option>
-        <option value="it">IT</option>
-        <option value="marketing">Marketing</option>
-        <option value="finance">Finance</option>
-    </select>
+    <label >username:</label>
+    <input type="text"
+        value={username}
+        id='username'
+    />
 
     <br />
         <label >Salary</label>
-        <input type="number" placeholder='Salary' id='salary' value = {salary} onChange = {handleChange} />
+        <input type="number" placeholder='Salary' id='mobile' value = {mobile} onChange = {handleChange} />
 
     <br />
     
-        <label>Is Married: </label>
-        <input type="checkbox" onChange={handleChange} id = "ismarried" />
+        <label>Description: </label>
+        <input type="text" onChange={handleChange} value = {description} id = "description" />
     <br />
+
+        
         <input type="Submit"  />
     
     </form>
+
+    {/* <Table handleData = { () => getData()} /> */}
+    </>
 
     
   )

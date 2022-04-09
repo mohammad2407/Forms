@@ -17,6 +17,24 @@
       "address": "Noida, New Delhi, UP",
       "ismarried": true,
       "id": 2
+    },
+    {
+      "employ": "Mitali",
+      "age": 24,
+      "department": "it",
+      "salary": 35000,
+      "address": "Andheri, Mumbai",
+      "ismarried": false,
+      "id": 3
+    },
+    {
+      "employ": "Mohammad",
+      "age": 21,
+      "department": "marketing",
+      "salary": 11111,
+      "address": "basavatraraka Nagar",
+      "ismarried": false,
+      "id": 4
     }
   ]
 }
